@@ -1,0 +1,18 @@
+{
+  "name": "english-paper-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paste an English paragraph (up to 10,000 words), then ask questions about it. Runs 100% locally with a React UI and a Node.js backend using a local AI question-answering model.",
+  "workspaces": ["client", "server"],
+  "engines": { "node": ">=20.19.0" },
+  "scripts": {
+    "setup": "npm install",
+    "build": "npm run build -w client",
+    "serve": "node server/index.js",
+    "start": "npm run build && npm run serve",
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
