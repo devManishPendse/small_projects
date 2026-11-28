@@ -1,0 +1,21 @@
+{
+  "name": "cartoon-ai-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bubbles - a cartoon AI chatbot with a streaming chat UI and conversation history (React + Node.js)",
+  "scripts": {
+    "setup": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "npm run build && npm --prefix server start",
+    "test": "npm --prefix server test"
+  },
+  "engines": {
+    "node": ">=18.11"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
